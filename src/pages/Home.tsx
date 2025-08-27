@@ -12,6 +12,7 @@ import {
   UsersIcon,
   Cog6ToothIcon,
 } from "@heroicons/react/24/solid";
+import { FaGithub } from "react-icons/fa";
 
 function AdminDashboard() {
   const { user, logout } = useAuth();
@@ -23,6 +24,16 @@ function AdminDashboard() {
           Admin Dashboard
         </Typography>
         <div className="flex items-center gap-4">
+          <a
+            href="https://github.com/gandhiomkar/react-auth-demo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-4 text-gray-800 hover:text-black"
+            title="View on GitHub"
+          >
+            {FaGithub({ size: 24, className: "transition hover:scale-110" })}
+          </a>
+
           <Typography className="text-gray-700 text-sm">
             Welcome, {user?.name}
           </Typography>
@@ -95,7 +106,8 @@ function AdminDashboard() {
             Quick Insights
           </Typography>
           <Typography className="text-gray-600">
-            This section can include charts, recent activity, data summaries, or system status widgets.
+            This section can include charts, recent activity, data summaries, or
+            system status widgets.
           </Typography>
         </div>
       </div>

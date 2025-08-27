@@ -3,15 +3,18 @@ import { Input, Typography } from "@material-tailwind/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import FormContainer from "../components/FormContainer";
-import { useNavigate } from 'react-router-dom';
-import {useAuth} from "../context/authContext"
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/authContext";
 
 export default function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState<{ type: "info" | "error" | "success"; text: string } | null>(null);
-  const navigate = useNavigate()
-  const {loginWithCredentials} = useAuth()
+  const [message, setMessage] = useState<{
+    type: "info" | "error" | "success";
+    text: string;
+  } | null>(null);
+  const navigate = useNavigate();
+  const { loginWithCredentials } = useAuth();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,47 +26,61 @@ export default function LoginForm() {
     setMessage({ type: "info", text: "Attempting to sign in..." });
     console.log("Login:", { username, password });
     const result = loginWithCredentials(username, password);
-    if(result.success){
-      setMessage({type: 'success', text:result.message});
+    if (result.success) {
+      setMessage({ type: "success", text: result.message });
       // setMessage({type: "success", text: "Signed in!"});
-      navigate('/')
-    }
-    else{
-
-      setMessage({type: "error", text: "Signed in Failed!"});
+      navigate("/");
+    } else {
+      setMessage({ type: "error", text: "Signed in Failed!" });
     }
   };
 
   return (
-    <FormContainer
-      title="Login"
-      onSubmit={handleLogin}
-      buttonLabel="Sign In"
-      buttonColor="blue"
-      message={message}
-      footer={
-        <Typography variant="small" className="text-center">
-          Not signed in?{" "}
-          <Link to="/signup" className="text-blue-600 hover:underline">
-            Sign up now.
-          </Link>
-        </Typography>
+    <div>
+      <FormContainer
+        title="Login"
+        onSubmit={handleLogin}
+        buttonLabel="Sign In"
+        buttonColor="blue"
+        message={message}
+              footer=
+      {
+        <div className="text-center space-y-2">
+          <Typography variant="small">
+            Not signed in?{" "}
+            <Link to="/signup" className="text-blue-600 hover:underline">
+              Sign up now.
+            </Link>
+          </Typography>
+          <Typography variant="small">
+            <a
+              href="https://github.com/gandhiomkar/react-auth-demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-black underline"
+            >
+              View Source on GitHub
+            </a>
+          </Typography>
+        </div>
       }
-    >
-      <Input
-        label="username"
-        type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        required
-      />
-      <Input
-        label="Password"
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
-    </FormContainer>
+      >
+        <Input
+          label="username"
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+        />
+        <Input
+          label="Password"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+      </FormContainer>
+
+    </div>
   );
 }
