@@ -1,5 +1,5 @@
 # Getting Started 
-The app is hosted at [github]("https://gandhiomkar.gihtub.io/react-auth-demo")
+The app is hosted at [github](https://gandhiomkar.gihtub.io/react-auth-demo)
 
 steps:
 - click signup > create account
