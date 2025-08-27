@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-auth-demo/static/css/main.c45b61c8.css",
-    "main.js": "/react-auth-demo/static/js/main.ae6c7bb4.js",
+    "main.css": "/react-auth-demo/static/css/main.8ae49217.css",
+    "main.js": "/react-auth-demo/static/js/main.b622fb4b.js",
     "static/js/453.8da9c2f5.chunk.js": "/react-auth-demo/static/js/453.8da9c2f5.chunk.js",
     "index.html": "/react-auth-demo/index.html",
-    "main.c45b61c8.css.map": "/react-auth-demo/static/css/main.c45b61c8.css.map",
-    "main.ae6c7bb4.js.map": "/react-auth-demo/static/js/main.ae6c7bb4.js.map",
+    "main.8ae49217.css.map": "/react-auth-demo/static/css/main.8ae49217.css.map",
+    "main.b622fb4b.js.map": "/react-auth-demo/static/js/main.b622fb4b.js.map",
     "453.8da9c2f5.chunk.js.map": "/react-auth-demo/static/js/453.8da9c2f5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c45b61c8.css",
-    "static/js/main.ae6c7bb4.js"
+    "static/css/main.8ae49217.css",
+    "static/js/main.b622fb4b.js"
   ]
 }
